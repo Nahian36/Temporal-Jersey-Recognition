@@ -1,0 +1,6 @@
+flowchart LR
+  A["Frames (T x 3xHxW)"] --> B["EfficientNet-Lite0 frame encoder<br/>global avg pool + proj 256d"]
+  B --> C["bi-GRU (bidirectional, hidden 192)"]
+  C --> D["Mask-aware attention pooling"]
+  D --> E["Tens head (0-9+blank)"]
+  D --> F["Ones head (0-9)"]
